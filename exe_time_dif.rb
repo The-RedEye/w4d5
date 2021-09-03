@@ -27,7 +27,7 @@ def my_min_2(arr)
     lowest
 end
 
-def largest_contiguous_subsum(list)
+def largest_contiguous_subsum_1(list)
     arr = []
     # debugger
     list.each_with_index do |ele, i|
@@ -50,8 +50,20 @@ def largest_contiguous_subsum(list)
     largest_sum
 end 
 
+def largest_subsum(list)
+    largest = list[0]
+    (0...list.length).each do |i|
+        (i...list.length).each do |j|
+            temp_sum = list[i..j].sum #Xn   = N :: Memory: 1+1 = 0
+             largest = temp_sum if temp_sum > largest
+        end
+       
+    end
 
+    largest
+end
 
+#[2, 3, -6, 7, -6, 7]
 
 
 #  list = [5, 3, -7]
