@@ -1,9 +1,20 @@
+require "byebug"
+
 def my_min_1(arr)
-    arr.each_with_index do |ele, i|
-        new_arr = arr.drop(ele)
-        # lowest = ele if lowest > ele
+    # debugger#compare arr[idx] with all other arr(ele)
+    arr.each do |ele| #n
+        new_arr = arr.reject { |ele2| ele2 == ele } #n^2
+        # debugger
+        is_lowest = true
+        new_arr.each do |new_ele|
+            
+            if new_ele < ele
+                is_lowest = false
+            end
+        # debugger    
+        end
+        return ele if is_lowest == true
     end
-    lowest
 end
 # ele arr.drop(ele)
 
