@@ -53,13 +53,16 @@ end
 def largest_subsum(list)
     largest = list[0]
     current_sum = list[0]
-    (1...list.length).each do |i|
+  
+    # [2, 3, -6, 7, -6, 7]
+    # [-5, -1, -3]
+    (1...list.length).each do |i| # -5
         # check if current_sum < 0 (neg num)
         # resetting current sum = 0 (only reset with neg)
-        current_sum += list[i]
+        current_sum = 0 if current_sum < 0
+        current_sum += list[i] #-6
 
-    
-       
+        largest = current_sum if current_sum>largest #6      
     end
 
     largest
