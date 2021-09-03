@@ -52,11 +52,13 @@ end
 
 def largest_subsum(list)
     largest = list[0]
-    (0...list.length).each do |i|
-        (i...list.length).each do |j|
-            temp_sum = list[i..j].sum #Xn   = N :: Memory: 1+1 = 0
-             largest = temp_sum if temp_sum > largest
-        end
+    current_sum = list[0]
+    (1...list.length).each do |i|
+        # check if current_sum < 0 (neg num)
+        # resetting current sum = 0 (only reset with neg)
+        current_sum += list[i]
+
+    
        
     end
 
